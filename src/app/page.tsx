@@ -86,8 +86,13 @@ import axios from "axios";
 import { MdSend } from "react-icons/md";
 import { AiOutlineRobot } from "react-icons/ai";
 
+interface Message {
+  text: string;
+  sender: "user" | "bot";
+}
+
 export default function Home() {
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
